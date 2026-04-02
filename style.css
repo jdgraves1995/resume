@@ -197,7 +197,7 @@ section h2::after {
 
 /* Skills Section */
 .skills-section {
-    background: rgba(20, 184, 166, 0.05);
+    background: rgba(99, 102, 241, 0.05);
 }
 
 .skills-list {
@@ -252,7 +252,7 @@ section h2::after {
 
 /* Experience Section */
 .experience-section {
-    background: rgba(236, 72, 153, 0.05);
+    background: rgba(99, 102, 241, 0.05);
 }
 
 .experience-list {
@@ -273,7 +273,7 @@ section h2::after {
 
 .experience-item:hover {
     transform: translateX(5px);
-    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.2);
+    box-shadow: 0 10px 25px rgba(100, 99, 99, 0.2);
 }
 
 .experience-item h3 {
@@ -316,7 +316,7 @@ section h2::after {
 }
 
 .experience-remove:hover {
-    background: #be185d;
+    background: #555555;
     transform: scale(1.05);
 }
 
