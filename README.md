@@ -19,6 +19,7 @@ portfolio/
 ├── index.html       # Main HTML file
 ├── style.css        # Styling and layout
 ├── script.js        # Functionality and data management
+├── data.json        # Your portfolio data (single source of truth)
 └── README.md        # This file
 ```
 
@@ -61,6 +62,9 @@ Simply double-click `index.html` to open it in your browser. This works but won'
 
 ## Using the Portfolio
 
+### Two Ways to Update Your Data
+
+#### **Option 1: Edit Mode UI (Recommended for quick changes)**
 1. **Click the "✏️ Edit Mode" button** to enable editing (only works on localhost)
 2. **Upload Your Profile Picture:**
    - Click on the profile picture area or use the "Choose Picture" button in the contact form
@@ -81,9 +85,44 @@ Simply double-click `index.html` to open it in your browser. This works but won'
    - Click "Add Experience"
    - Remove experience by clicking the "Remove" button
 
-6. **Toggle Edit Mode Off** when you're done editing
+6. **Export Your Data:**
+   - Click "📥 Export Data" to download your portfolio as a JSON file
+   - This downloads an updated `portfolio-data-YYYY-MM-DD.json` file
 
-All your changes are automatically saved to your browser's local storage!
+7. **Toggle Edit Mode Off** when you're done editing
+
+#### **Option 2: Edit data.json Directly (For deployment)**
+1. Open `data.json` in VS Code
+2. Edit your portfolio information directly:
+   ```json
+   {
+     "contact": {
+       "name": "Your Name",
+       "email": "your.email@example.com",
+       "phone": "(123) 456-7890",
+       "location": "Your City, State"
+     },
+     "skills": ["Skill1", "Skill2", "Skill3"],
+     "experience": [...]
+   }
+   ```
+3. Save the file
+4. Refresh your browser - changes appear automatically!
+5. Commit and push to GitHub:
+   ```bash
+   git add data.json
+   git commit -m "Update portfolio data"
+   git push origin main
+   ```
+
+### How It Works
+
+- **Localhost:** Page loads `data.json` from your server and caches it in localStorage
+- **Edit Mode:** Updates are stored in localStorage (browser memory)
+- **Export:** Downloads the current data as a JSON file
+- **GitHub Pages:** Reads from the committed `data.json` file, so your real data is displayed when others visit
+
+All your changes are automatically saved to your browser's local storage and can be exported or committed to GitHub!
 
 ### Edit Mode Restrictions
 
@@ -106,8 +145,11 @@ Edit the CSS custom properties in `style.css` (lines 8-15):
 }
 ```
 
-### Default Data
-Modify the `DEFAULT_DATA` object in `script.js` to change initial values.
+### Portfolio Data
+Update `data.json` with your information:
+- **Contact:** Name, email, phone, location
+- **Skills:** List of your skills
+- **Experience:** Your work experience entries
 
 ### Fonts
 Change the font-family in `style.css`:
