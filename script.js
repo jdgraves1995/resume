@@ -11,37 +11,12 @@ const isLocalhost = window.location.hostname === 'localhost' ||
                    window.location.hostname === '127.0.0.1' ||
                    window.location.hostname === '::1';
 
-// Default data
-const DEFAULT_DATA = {
-    contact: {
-        name: 'Your Name',
-        email: 'your.email@example.com',
-        phone: '(123) 456-7890',
-        location: 'Your City, State'
-    },
-    skills: ['JavaScript', 'React', 'Node.js', 'CSS', 'HTML'],
-    experience: [
-        {
-            title: 'Senior Developer',
-            company: 'Tech Company',
-            duration: 'Jan 2022 - Present',
-            description: 'Lead development of web applications using modern technologies.'
-        },
-        {
-            title: 'Junior Developer',
-            company: 'Startup Inc',
-            duration: 'Jun 2020 - Dec 2021',
-            description: 'Contributed to various projects and learned industry best practices.'
-        }
-    ]
-};
-
 // Global state
 let isEditMode = false;
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    initializeData();
+document.addEventListener('DOMContentLoaded', async () => {
+    await initializeData();
     renderContact();
     renderSkills();
     renderExperience();
@@ -50,16 +25,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeEditMode();
 });
 
-// Initialize localStorage with default data if empty
-function initializeData() {
-    if (!localStorage.getItem(STORAGE_KEYS.CONTACT)) {
-        localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(DEFAULT_DATA.contact));
-    }
-    if (!localStorage.getItem(STORAGE_KEYS.SKILLS)) {
-        localStorage.setItem(STORAGE_KEYS.SKILLS, JSON.stringify(DEFAULT_DATA.skills));
-    }
-    if (!localStorage.getItem(STORAGE_KEYS.EXPERIENCE)) {
-        localStorage.setItem(STORAGE_KEYS.EXPERIENCE, JSON.stringify(DEFAULT_DATA.experience));
+// Initialize localStorage with data from data.json
+async function initializeData() {
+    try {
+        // Fetch data.json from the server
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Failed to fetch data.json');
+        const data = await response.json();
+        
+        // Store in localStorage, overwriting any existing data
+        localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(data.contact));
+        localStorage.setItem(STORAGE_KEYS.SKILLS, JSON.stringify(data.skills));
+        localStorage.setItem(STORAGE_KEYS.EXPERIENCE, JSON.stringify(data.experience));
+    } catch (error) {
+        console.error('Error loading data.json:', error);
+        // Fallback: initialize with empty/default structure
+        if (!localStorage.getItem(STORAGE_KEYS.CONTACT)) {
+            localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify({
+                name: 'Your Name',
+                email: 'your.email@example.com',
+                phone: '(123) 456-7890',
+                location: 'Your City, State'
+            }));
+        }
+        if (!localStorage.getItem(STORAGE_KEYS.SKILLS)) {
+            localStorage.setItem(STORAGE_KEYS.SKILLS, JSON.stringify([]));
+        }
+        if (!localStorage.getItem(STORAGE_KEYS.EXPERIENCE)) {
+            localStorage.setItem(STORAGE_KEYS.EXPERIENCE, JSON.stringify([]));
+        }
     }
 }
 

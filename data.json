@@ -1,0 +1,29 @@
+{
+  "contact": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "phone": "(123) 456-7890",
+    "location": "Your City, State"
+  },
+  "skills": [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "CSS",
+    "HTML"
+  ],
+  "experience": [
+    {
+      "title": "Senior Developer",
+      "company": "Tech Company",
+      "duration": "Jan 2022 - Present",
+      "description": "Lead development of web applications using modern technologies."
+    },
+    {
+      "title": "Junior Developer",
+      "company": "Startup Inc",
+      "duration": "Jun 2020 - Dec 2021",
+      "description": "Contributed to various projects and learned industry best practices."
+    }
+  ]
+}
