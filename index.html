@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Toggle Edit Mode -->
+        <header class="header">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="profile-picture-container">
+                        <img id="profilePicture" class="profile-picture" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23ddd' width='200' height='200'/%3E%3Ctext x='100' y='100' text-anchor='middle' dy='.3em' fill='%23999' font-size='60' font-family='Arial'%3E👤%3C/text%3E%3C/svg%3E" alt="Profile Picture">
+                        <input type="file" id="profilePictureInput" class="profile-picture-input" accept="image/*" style="display: none;">
+                    </div>
+                    <div>
+                        <h1>My Portfolio</h1>
+                        <p id="localhostMessage" class="localhost-message"></p>
+                    </div>
+                </div>
+                <button id="editToggle" class="edit-toggle">✏️ Edit Mode</button>
+            </div>
+        </header>
+
+        <!-- Contact Information Section -->
+        <section class="contact-section">
+            <h2>Contact Information</h2>
+            <div id="contactInfo" class="contact-info">
+                <div class="contact-item">
+                    <strong>Name:</strong> <span id="contactName">Your Name</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong> <span id="contactEmail">your.email@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> <span id="contactPhone">(123) 456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> <span id="contactLocation">Your City, State</span>
+                </div>
+            </div>
+
+            <!-- Edit Contact Form (Hidden by default) -->
+            <div id="editContactForm" class="edit-form hidden">
+                <h3>Edit Contact Information</h3>
+                <div class="edit-form-group">
+                    <label>Profile Picture:</label>
+                    <button onclick="triggerProfilePictureUpload()" class="btn-save">Choose Picture</button>
+                </div>
+                <input type="text" id="inputContactName" placeholder="Full Name" class="form-input">
+                <input type="email" id="inputContactEmail" placeholder="Email" class="form-input">
+                <input type="tel" id="inputContactPhone" placeholder="Phone Number" class="form-input">
+                <input type="text" id="inputContactLocation" placeholder="City, State" class="form-input">
+                <button onclick="saveContact()" class="btn-save">Save Contact</button>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <h2>Skills</h2>
+            <div id="skillsList" class="skills-list">
+                <!-- Skills will be inserted here -->
+            </div>
+
+            <!-- Add Skill Form (Hidden by default) -->
+            <div id="addSkillForm" class="edit-form hidden">
+                <input type="text" id="inputSkill" placeholder="Enter a skill (e.g., JavaScript, React)" class="form-input">
+                <button onclick="addSkill()" class="btn-save">Add Skill</button>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <h2>Experience</h2>
+            <div id="experienceList" class="experience-list">
+                <!-- Experience items will be inserted here -->
+            </div>
+
+            <!-- Add Experience Form (Hidden by default) -->
+            <div id="addExperienceForm" class="edit-form hidden">
+                <h3>Add Work Experience</h3>
+                <input type="text" id="inputJobTitle" placeholder="Job Title" class="form-input">
+                <input type="text" id="inputCompany" placeholder="Company Name" class="form-input">
+                <input type="text" id="inputDuration" placeholder="Duration (e.g., Jan 2020 - Dec 2021)" class="form-input">
+                <textarea id="inputDescription" placeholder="Job Description" class="form-input" rows="4"></textarea>
+                <button onclick="addExperience()" class="btn-save">Add Experience</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
