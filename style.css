@@ -5,12 +5,12 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #ec4899;
-    --accent-color: #14b8a6;
+    --primary-color: #333333;
+    --secondary-color: #555555;
+    --accent-color: #777777;
     --light-bg: #f3f4f6;
     --dark-bg: #1f2937;
-    --text-color: #1f2937;
+    --text-color: #1a1a1a;
     --border-color: #e5e7eb;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -19,7 +19,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background: linear-gradient(135deg, #667eea 0%, #ebe8e8 100%);
+    background: linear-gradient(135deg, #000000 0%, #CCCCCC 100%);
     min-height: 100vh;
     padding: 20px 0;
 }
@@ -35,7 +35,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #6366f1 0%, #f3f0f2 100%);
+    background: linear-gradient(135deg, #000000 0%, #444444 100%);
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -76,7 +76,7 @@ body {
 
 .edit-toggle.active {
     background: white;
-    color: #6366f1;
+    color: #333333;
 }
 
 .edit-toggle:disabled {
@@ -128,7 +128,7 @@ body {
 }
 
 .localhost-warning {
-    color: #fbbf24;
+    color: #666666;
     font-weight: 600;
 }
 
@@ -145,7 +145,7 @@ section:last-child {
 section h2 {
     font-size: 2em;
     margin-bottom: 25px;
-    color: #6366f1;
+    color: #333333;
     position: relative;
     padding-bottom: 15px;
 }
@@ -157,7 +157,7 @@ section h2::after {
     left: 0;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #6366f1, #ec4899);
+    background: linear-gradient(90deg, #000000, #777777);
     border-radius: 2px;
 }
 
@@ -177,7 +177,7 @@ section h2::after {
     background: white;
     padding: 20px;
     border-radius: 12px;
-    border-left: 4px solid #6366f1;
+    border-left: 4px solid #333333;
     box-shadow: var(--shadow);
     transition: transform 0.2s ease;
 }
@@ -187,7 +187,7 @@ section h2::after {
 }
 
 .contact-item strong {
-    color: #6366f1;
+    color: #333333;
     display: block;
     margin-bottom: 8px;
     font-size: 0.9em;
@@ -208,7 +208,7 @@ section h2::after {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #14b8a6, #0d9488);
+    background: linear-gradient(135deg, #555555, #333333);
     color: white;
     padding: 12px 20px;
     border-radius: 50px;
@@ -223,7 +223,7 @@ section h2::after {
 
 .skill-tag:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 8px 16px rgba(51, 51, 51, 0.3);
 }
 
 .skill-remove {
@@ -265,7 +265,7 @@ section h2::after {
     background: white;
     padding: 25px;
     border-radius: 12px;
-    border-left: 5px solid #ec4899;
+    border-left: 5px solid #333333;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     position: relative;
@@ -277,27 +277,27 @@ section h2::after {
 }
 
 .experience-item h3 {
-    color: #ec4899;
+    color: #222222;
     font-size: 1.5em;
     margin-bottom: 8px;
 }
 
 .experience-item .company {
-    color: #6366f1;
+    color: #333333;
     font-weight: 600;
     margin-bottom: 5px;
     font-size: 1.1em;
 }
 
 .experience-item .duration {
-    color: #9ca3af;
+    color: #888888;
     font-size: 0.95em;
     margin-bottom: 12px;
     font-style: italic;
 }
 
 .experience-item .description {
-    color: #4b5563;
+    color: #555555;
     line-height: 1.8;
 }
 
@@ -305,7 +305,7 @@ section h2::after {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: #ec4899;
+    background: #555555;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -334,7 +334,7 @@ section h2::after {
 }
 
 .edit-form h3 {
-    color: #6366f1;
+    color: #333333;
     margin-bottom: 20px;
     font-size: 1.3em;
 }
@@ -347,7 +347,7 @@ section h2::after {
 
 .edit-form-group label {
     display: block;
-    color: #6366f1;
+    color: #333333;
     font-weight: 600;
     margin-bottom: 10px;
     font-size: 0.95em;
@@ -368,17 +368,17 @@ section h2::after {
 
 .form-input:focus {
     outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    border-color: #333333;
+    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
 }
 
 .form-input::placeholder {
-    color: #9ca3af;
+    color: #888888;
 }
 
 /* Buttons */
 .btn-save {
-    background: linear-gradient(135deg, #6366f1, #ec4899);
+    background: linear-gradient(135deg, #333333, #555555);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -392,7 +392,7 @@ section h2::after {
 
 .btn-save:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 20px rgba(51, 51, 51, 0.3);
 }
 
 .btn-save:active {
@@ -400,7 +400,7 @@ section h2::after {
 }
 
 .btn-add {
-    background: linear-gradient(135deg, #14b8a6, #0d9488);
+    background: linear-gradient(135deg, #555555, #333333);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -414,7 +414,7 @@ section h2::after {
 
 .btn-add:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 8px 16px rgba(51, 51, 51, 0.3);
 }
 
 /* Data Management */
@@ -438,7 +438,7 @@ section h2::after {
 .empty-state {
     text-align: center;
     padding: 40px 20px;
-    color: #9ca3af;
+    color: #888888;
 }
 
 .empty-state p {
