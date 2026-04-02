@@ -256,7 +256,7 @@ function renderExperience() {
             <h3>${exp.title}</h3>
             <div class="company">${exp.company}</div>
             <div class="duration">${exp.duration}</div>
-            <div class="description">${exp.description}</div>
+            <div class="description">${exp.description.split('\n').join('<br>')}</div>
         </div>
     `).join('');
 }
