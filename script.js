@@ -97,9 +97,9 @@ function updateLocalhostMessage() {
     if (isLocalhost) {
         message.innerHTML = '✓ Local editing enabled';
         message.style.color = 'rgba(255, 255, 255, 0.8)';
+        message.style.display = 'block';
     } else {
-        message.innerHTML = '🔒 Read-only mode (not on localhost)';
-        message.classList.add('localhost-warning');
+        message.style.display = 'none';
     }
 }
 
@@ -107,8 +107,7 @@ function updateLocalhostMessage() {
 function initializeEditMode() {
     const editToggle = document.getElementById('editToggle');
     if (!isLocalhost) {
-        editToggle.disabled = true;
-        editToggle.title = 'Edit mode is only available on localhost';
+        editToggle.style.display = 'none';
     }
 }
 
