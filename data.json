@@ -17,25 +17,25 @@
       "title": "Software Engineer Tech Lead",
       "company": "Fidelity National Information Services (FIS)",
       "duration": "April 2025 - Present",
-      "description": "Leading an international team of 7 developers and 4 QA analysts, driving delivery of high-quality software solutions through mentorship and Agile development. Integrated external microservices using RESTful JSON APIs with Java, Spring Boot, and Angular for debit card maintenance and user functionality. Engineered a secure authentication framework leveraging OAuth 2.0, JWT, and mTLS integrated with AS/400 DB2 backend to enable RESTful API adoption and replace legacy ISO 8583 interfaces. Managed feature branches and pull requests using Git version control within Bitbucket to support agile development cycles and continuous integration."
+      "description": "• Leading an international team of 7 developers and 4 QA analysts, driving delivery of high-quality software solutions through mentorship and Agile development\n• Integrated external microservices using RESTful JSON APIs with Java, Spring Boot, and Angular for debit card maintenance and user functionality\n• Engineered a secure authentication framework leveraging OAuth 2.0, JWT, and mTLS integrated with AS/400 DB2 backend to enable RESTful API adoption\n• Managed feature branches and pull requests using Git version control within Bitbucket to support agile development cycles and continuous integration"
     },
     {
       "title": "Software Engineer II",
       "company": "Fidelity National Information Services (FIS)",
       "duration": "July 2024 - April 2025",
-      "description": "Refactored legacy IBM iSeries applications by implementing RPGLE Free Format to enhance code readability and maintainability. Spearheaded the transition from DDS to DDL, aligning database structures with modern relational database standards. Implemented IBM AS/400 integrated database systems, enhancing operational efficiency and data integrity. Maintained Electronic Funds Transfer (EFT) standards in compliance with ISO 8583 messaging protocols for secure transaction processing between internal systems and external payment networks including Visa and MasterCard. Collaborated weekly with Customer Support to align development with client needs."
+      "description": "• Refactored legacy IBM iSeries applications by implementing RPGLE Free Format to enhance code readability and maintainability\n• Spearheaded the transition from DDS to DDL, aligning database structures with modern relational database standards\n• Implemented IBM AS/400 integrated database systems, enhancing operational efficiency and data integrity\n• Maintained Electronic Funds Transfer (EFT) standards in compliance with ISO 8583 messaging protocols for secure transaction processing\n• Collaborated weekly with Customer Support to align development with client needs"
     },
     {
       "title": "Senior Technical Analyst",
       "company": "Euronet Worldwide",
       "duration": "October 2022 - July 2024",
-      "description": "Deployed applications on AWS and Azure, optimizing for scalability and reliability in cloud environments. Administered MariaDB and MySQL databases, ensuring high availability and performance for substantial financial transaction processing. Specialized in Linux system administration, configuring and deploying applications across RedHat, CentOS, AlmaLinux, and Amazon Linux distributions. Implemented IBM AS/400 integrated database systems and developed XML-based ATM user interfaces adhering to XFS standards. Leveraged JIRA for Agile project management, facilitating effective backlog prioritization and sprint tracking. Mentored new team members, fostering a culture of continuous learning in the fintech sector."
+      "description": "• Deployed applications on AWS and Azure, optimizing for scalability and reliability in cloud environments\n• Administered MariaDB and MySQL databases, ensuring high availability and performance for substantial financial transaction processing\n• Specialized in Linux system administration, configuring and deploying applications across RedHat, CentOS, AlmaLinux, and Amazon Linux distributions\n• Implemented IBM AS/400 integrated database systems and developed XML-based ATM user interfaces adhering to XFS standards\n• Leveraged JIRA for Agile project management, facilitating effective backlog prioritization and sprint tracking\n• Mentored new team members, fostering a culture of continuous learning in the fintech sector"
     },
     {
       "title": "Technical Analyst",
       "company": "Euronet Worldwide",
       "duration": "May 2019 - October 2022",
-      "description": "Developed and debugged enterprise-level RPGLE, Free Format RPGLE, and SQL RPGLE programs. Implemented IBM AS/400 integrated database systems, enhancing operational efficiency and data integrity. Interpreted technical specifications to deliver precise and quality-driven results. Collaborated with international clients to develop customized solutions. Successfully deployed IBM applications within highly available environments."
+      "description": "• Developed and debugged enterprise-level RPGLE, Free Format RPGLE, and SQL RPGLE programs\n• Implemented IBM AS/400 integrated database systems, enhancing operational efficiency and data integrity\n• Interpreted technical specifications to deliver precise and quality-driven results\n• Collaborated with international clients to develop customized solutions\n• Successfully deployed IBM applications within highly available environments"
     }
   ]
 }

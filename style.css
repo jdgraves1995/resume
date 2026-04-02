@@ -299,6 +299,8 @@ section h2::after {
 .experience-item .description {
     color: #4b5563;
     line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .experience-remove {
