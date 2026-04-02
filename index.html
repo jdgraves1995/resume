@@ -56,6 +56,16 @@
                 <input type="text" id="inputContactLocation" placeholder="City, State" class="form-input">
                 <button onclick="saveContact()" class="btn-save">Save Contact</button>
             </div>
+
+            <!-- Data Management (Hidden by default) -->
+            <div id="dataManagement" class="edit-form hidden">
+                <h3>Data Management</h3>
+                <div class="data-management-buttons">
+                    <button onclick="exportData()" class="btn-save">📥 Export Data</button>
+                    <button onclick="triggerImportData()" class="btn-save">📤 Import Data</button>
+                    <input type="file" id="importDataInput" class="data-import-input" accept=".json" style="display: none;">
+                </div>
+            </div>
         </section>
 
         <!-- Skills Section -->

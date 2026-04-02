@@ -417,6 +417,23 @@ section h2::after {
     box-shadow: 0 8px 16px rgba(20, 184, 166, 0.3);
 }
 
+/* Data Management */
+.data-management-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.data-import-input {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .data-management-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Empty State */
 .empty-state {
     text-align: center;

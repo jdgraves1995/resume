@@ -89,6 +89,9 @@ function setupEventListeners() {
             }
         });
     }
+
+    // Setup import data listener
+    setupImportListener();
 }
 
 // Update localhost message
@@ -122,18 +125,21 @@ function toggleEditMode() {
     const editContactForm = document.getElementById('editContactForm');
     const addSkillForm = document.getElementById('addSkillForm');
     const addExperienceForm = document.getElementById('addExperienceForm');
+    const dataManagement = document.getElementById('dataManagement');
 
     if (isEditMode) {
         editToggle.classList.add('active');
         editContactForm.classList.remove('hidden');
         addSkillForm.classList.remove('hidden');
         addExperienceForm.classList.remove('hidden');
+        dataManagement.classList.remove('hidden');
         populateContactForm();
     } else {
         editToggle.classList.remove('active');
         editContactForm.classList.add('hidden');
         addSkillForm.classList.add('hidden');
         addExperienceForm.classList.add('hidden');
+        dataManagement.classList.add('hidden');
         clearForms();
     }
 }
@@ -302,6 +308,85 @@ function clearForms() {
     document.getElementById('inputCompany').value = '';
     document.getElementById('inputDuration').value = '';
     document.getElementById('inputDescription').value = '';
+}
+
+// EXPORT/IMPORT FUNCTIONS
+function exportData() {
+    const contact = JSON.parse(localStorage.getItem(STORAGE_KEYS.CONTACT));
+    const skills = JSON.parse(localStorage.getItem(STORAGE_KEYS.SKILLS));
+    const experience = JSON.parse(localStorage.getItem(STORAGE_KEYS.EXPERIENCE));
+    const profilePicture = localStorage.getItem(STORAGE_KEYS.PROFILE_PICTURE);
+
+    const exportData = {
+        contact,
+        skills,
+        experience,
+        profilePicture
+    };
+
+    // Create a blob and download
+    const dataString = JSON.stringify(exportData, null, 2);
+    const blob = new Blob([dataString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `portfolio-data-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    alert('Portfolio data exported successfully!');
+}
+
+function triggerImportData() {
+    document.getElementById('importDataInput').click();
+}
+
+function setupImportListener() {
+    const importInput = document.getElementById('importDataInput');
+    if (importInput) {
+        importInput.addEventListener('change', handleImportData);
+    }
+}
+
+function handleImportData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const importedData = JSON.parse(e.target.result);
+
+            // Validate the imported data has the required structure
+            if (!importedData.contact || !importedData.skills || !importedData.experience) {
+                alert('Invalid data format. Please use an exported portfolio file.');
+                return;
+            }
+
+            // Save imported data to localStorage
+            localStorage.setItem(STORAGE_KEYS.CONTACT, JSON.stringify(importedData.contact));
+            localStorage.setItem(STORAGE_KEYS.SKILLS, JSON.stringify(importedData.skills));
+            localStorage.setItem(STORAGE_KEYS.EXPERIENCE, JSON.stringify(importedData.experience));
+            
+            if (importedData.profilePicture) {
+                localStorage.setItem(STORAGE_KEYS.PROFILE_PICTURE, importedData.profilePicture);
+            }
+
+            // Re-render everything
+            renderContact();
+            renderSkills();
+            renderExperience();
+            alert('Portfolio data imported successfully!');
+        } catch (error) {
+            alert('Error importing data. Please make sure the file is valid JSON.');
+        }
+    };
+    reader.readAsText(file);
+
+    // Reset the input so the same file can be imported again
+    event.target.value = '';
 }
 
 // Optional: Function to reset all data to defaults
